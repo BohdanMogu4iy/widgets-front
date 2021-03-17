@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <main>
+        <section class="widgets-desk" id="widgets-desk"></section>
+        <section class="user-calendar">
+            <div class="day-wrapper">
+                <div class="day-info-wrapper">
+                    <div class="day-date"><br></div>
+                    <div class="control-buttons-wrapper">
+                        <div class="control-button" role="button"><span class="button-icon create-event"></span></div>
+                        <div class="control-button" role="button"><span id ="button-create-widget" class="button-icon create-widget"></span></div>
+                        <div class="control-button" role="button"><span class="button-icon account"></span></div>
+                    </div>
+                </div>
+                <div class="calendar-wrapper">
+                    <div class="calendar-nav" id="calendar-nav">
+                        <div class="calendar-button left" role="button" data-direction="-1"><span class="button-icon calendar"></span></div>
+                        <div class="calendar-month" id="month"></div>
+                        <div class="calendar-button right" role="button" data-direction="1"><span class="button-icon calendar"></span></div>
+                    </div>
+                    <div class="calendar" role="grid">
+                        <div class="calendar-week" role="row">
+                            <span class="calendar-cell day-type" role="columnheader">Mo</span>
+                            <span class="calendar-cell day-type" role="columnheader">Tu</span>
+                            <span class="calendar-cell day-type" role="columnheader">We</span>
+                            <span class="calendar-cell day-type" role="columnheader">Th</span>
+                            <span class="calendar-cell day-type" role="columnheader">Fr</span>
+                            <span class="calendar-cell day-type" role="columnheader">Sa</span>
+                            <span class="calendar-cell day-type" role="columnheader">Su</span>
+                        </div>
+                        <div class="calendar-body" role="rowgroup" id="calendar-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-events-wrapper" role="presentation" id="day-events-wrapper">
+                <div class="day-events-time">
+                    <div class="day-time-line"><span class="day-time">00:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">01:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">02:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">03:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">04:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">05:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">06:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">07:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">08:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">09:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">10:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">11:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">12:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">13:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">13:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">15:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">16:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">17:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">18:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">19:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">20:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">21:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">22:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                    <div class="day-time-line"><span class="day-time">23:00</span></div>
+                    <div class="day-time-line"><span class="day-time"></span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+<script src="style/requests.js"></script>
+<script src="style/dayEvents.js"></script>
+<script src="style/calendar.js"></script>
+<script src="style/widgets.js"></script>
+<script src="style/main.js"></script>
+</html>
