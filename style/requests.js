@@ -5,9 +5,8 @@ eventsEnding = 'events/'
 widgetsEnding = 'widgets/'
 
 
-async function getEvents(day){
+function getEvents(date){
     console.log(`get Events \n`)
-
     // await fetch(mainUrl+eventsEnding+currentUser)
     //     .then( response => {
     //         return response.json()
@@ -25,7 +24,7 @@ async function getEvents(day){
         {id: Math.floor(Math.random() * Math.floor(1000)), startTime: 1400, duration: 80, title: 'Fifth Event', color: 'Purple', repeat: 1, repeatCount:2}]
 }
 
-async function putEvent(event){
+function putEvent(event){
     console.log(`put Event \n ${JSON.stringify(event)}`)
     let data = {
         title: event.title,
@@ -53,7 +52,7 @@ async function putEvent(event){
     return  Math.floor(Math.random() * Math.floor(1000))
 }
 
-async function pushEvent(event){
+function pushEvent(event){
     console.log(`push Event \n ${JSON.stringify(event)}`)
     let data = {
         title: event.title,
@@ -80,26 +79,26 @@ async function pushEvent(event){
 //         })
 }
 
-async function deleteEvent(event){
+function deleteEvent(event){
     console.log(`delete Event \n ${JSON.stringify(event)}`)
-    await fetch(mainUrl+eventsEnding+event.eventId,{
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    }).then( response => {
-        return response.json()
-    })
-        .then( data => {
-            console.log(data)
-        })
-        .catch( err => {
-            console.log(err)
-        })
+    // await fetch(mainUrl+eventsEnding+event.eventId,{
+    //     method: 'DELETE',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    // }).then( response => {
+    //     return response.json()
+    // })
+    //     .then( data => {
+    //         console.log(data)
+    //     })
+    //     .catch( err => {
+    //         console.log(err)
+    //     })
 }
 
-async function deleteWidget(widget){
+function deleteWidget(widget){
     console.log(`delete Widget \n ${JSON.stringify(widget['taskList'])}`)
     // await fetch(mainUrl+widgetsEnding+widget.widgetId,{
     //     method: 'DELETE',
@@ -118,7 +117,7 @@ async function deleteWidget(widget){
     //     })
 }
 
-async function putWidget(widget){
+function putWidget(widget){
     console.log(`put Widget \n ${JSON.stringify(widget['taskList'])}`)
     let data = {
         type: widget.widgetType,
@@ -159,7 +158,7 @@ async function putWidget(widget){
     }
 }
 
-async function postWidget(widget){
+function postWidget(widget){
     console.log(`post Widget \n ${JSON.stringify(widget['taskList'])}`)
     let data = {
         type: widget.widgetType,
@@ -195,7 +194,7 @@ async function postWidget(widget){
 
 }
 
-async function getWidgets(){
+function getWidgets(){
     console.log(`get Widgets \n`)
     // await fetch(mainUrl+usersEnding+currentUser)
     //     .then( response => {

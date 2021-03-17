@@ -10,6 +10,7 @@ class dayEvents {
 
     // рисуем все ивенты дня
     drawEvents() {
+        this.eventsStructure = {}
         this.clearDayEvents()
         this.setEventsStructure(getEvents(this.calendar.getCurrentDate()))
         for (let line in this.eventsStructure) {
@@ -37,7 +38,8 @@ class dayEvents {
 
     // заполняем структуру ивентов
     setEventsStructure(events) {
-        this.eventsStructure = reque
+        // this.eventsStructure = getEvents()
+        console.log(events)
         for (let e of events) {
             e = new event(e)
             let line = roundTo30(e.startTime)
