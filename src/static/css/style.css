@@ -16,6 +16,10 @@ ul,li{
 input, select{
     outline: none;
     border: none;
+    cursor: pointer;
+}
+input[type="text"]{
+    cursor: text;
 }
 *,
 *:before,
@@ -29,17 +33,17 @@ input, select{
     overflow: hidden;
 }
 @media (max-width: 760px) {
-    .user-calendar{
+    .calendar-section{
         width: 100%;
     }
 
 }
 @media (min-width: 760px){
-    .user-calendar{
+    .calendar-section{
         min-width: 540px;
     }
 }
-.user-calendar{
+.calendar-section{
     height: 100vh;
     position: absolute;
     right: 0;
@@ -81,6 +85,9 @@ input, select{
     cursor: pointer;
     margin-right: 15px;
 }
+.control-button:hover{
+    cursor: pointer;
+}
 .control-button:last-child{
     margin-right: 0;
 }
@@ -94,13 +101,13 @@ input, select{
     height: 20px;
 }
 .button-icon.create-event{
-    background-image: url("media/plus.svg");
+    background-image: url("../media/plus.svg");
 }
 .button-icon.create-widget{
-    background-image: url("media/widget.svg");
+    background-image: url("../media/widget.svg");
 }
 .button-icon.account{
-    background-image: url("media/account.svg");
+    background-image: url("../media/account.svg");
 }
 .calendar-wrapper{
     display: flex;
@@ -124,18 +131,20 @@ input, select{
 }
 .calendar-button{
     position: relative;
-    cursor: pointer;
     z-index: 0;
 }
-.button-icon.calendar{
-    width: 16px;
-    height: 16px;
-    background-image: url("media/arrowdown.svg");
+.calendar-button:hover{
+    cursor: pointer;
 }
 .button-icon.calendar{
     width: 16px;
     height: 16px;
-    background-image: url("media/arrowdown.svg");
+    background-image: url("../media/arrowdown.svg");
+}
+.button-icon.calendar{
+    width: 16px;
+    height: 16px;
+    background-image: url("../media/arrowdown.svg");
 }
 .calendar-button:before{
     content: '';
@@ -198,6 +207,7 @@ input, select{
 }
 .calendar-day{
     z-index: 1;
+    pointer-events: none;
 }
 .calendar-cell.day:before{
     content: '';
@@ -244,6 +254,7 @@ input, select{
     overflow-x: hidden;
     background-color: white;
     position: relative;
+    cursor: pointer;
 }
 .day-events-wrapper::-webkit-scrollbar {
     background: transparent;
@@ -294,6 +305,9 @@ input, select{
     left: 48px;
     padding: 5px 10px;
 }
+.event-info{
+    pointer-events: none;
+}
 .event-info.name{
     font-size: 1.5rem;
     color: white;
@@ -312,18 +326,19 @@ input, select{
     padding: 10px;
     border-radius: 15px;
     z-index: 10000;
+    cursor: auto;
 }
 .button-icon.close{
-    background-image: url("media/close.svg");
+    background-image: url("../media/close.svg");
 }
 .button-icon.save{
-    background-image: url("media/save.svg");
+    background-image: url("../media/save.svg");
 }
 .button-icon.edit{
-    background-image: url("media/edit.svg");
+    background-image: url("../media/edit.svg");
 }
 .button-icon.delete{
-    background-image: url("media/delete.svg");
+    background-image: url("../media/delete.svg");
 }
 .event-control-wrapper{
     display: flex;
@@ -333,6 +348,9 @@ input, select{
 }
 .event-button{
     padding-left: 15px;
+}
+.event-button:hover{
+    cursor: pointer;
 }
 .event-input{
     display: flex;
@@ -366,15 +384,25 @@ input.event-title{
     left: 0;
     height: 100%;
     width: 100%;
-    background: #70757a;
-    opacity: 0.5;
+    background-color: rgba(112, 117, 122, 0.5);
+    z-index: 100000000;
 }
 .widgets-menu{
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 50%;
+    background: white;
+    border-radius: 10px;
+    min-height: 250px;
+
 }
 .widgets-menu-item{
     color: black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 32px;
 }
 .widget-wrapper{
     background: white;
@@ -391,14 +419,20 @@ input.event-title{
 .widget-button{
     padding-left: 15px;
 }
+.widget-button:hover{
+    cursor: pointer;
+}
+.button-icon{
+    pointer-events: none;
+}
 .button-icon.refresh{
-    background-image: url("media/refresh.svg");
+    background-image: url("../media/refresh.svg");
 }
 .button-icon.more{
-    background-image: url("media/more.svg");
+    background-image: url("../media/more.svg");
 }
 .button-icon.move{
-    background-image: url("media/move.svg");
+    background-image: url("../media/move.svg");
 }
 .widget-title{
     text-align: left;
@@ -497,6 +531,6 @@ input[type="color"]::-webkit-color-swatch {
 .button-icon.confirm{
     height: 100%;
     width: 100%;
-    background-image: url("media/confirm.svg");
+    background-image: url("../media/confirm.svg");
 }
 
